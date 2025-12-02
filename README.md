@@ -1,2 +1,1 @@
-# NEET
-WIP Obsidian Theme
+**WIP,** thank you for your help!

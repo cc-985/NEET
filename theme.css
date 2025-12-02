@@ -1,0 +1,988 @@
+/* @settings
+name: 💿 NEET Configuration 💿
+id: neet-config
+settings:
+-
+    id: neet-themes
+    title: Palettes
+    description: For some reason, there's a lot of green.
+    type: class-select
+    allowEmpty: false
+    default: neet-lite
+    options:
+        -
+          label: Lite
+          value: neet-lite
+        -
+          label: Frutiger Aero
+          value: neet-aero
+        -
+          label: Strawberry Matcha
+          value: neet-strawmatcha
+        -
+          label: Mint
+          value: neet-mint
+        -
+          label: Magic Hour
+          value: neet-magic
+        -
+          label: CMYK
+          value: neet-cmyk
+        -
+          label: Accent
+          value: neet-accent
+-
+    id: neet-kanwrap
+    title: Kanban Wrap
+    description: Wraps the kanban board into multiple rows to fit on the screen.
+    type: class-toggle
+    allowEmpty: false
+    default: true
+-
+    id: neet-cardstyle
+    title: Bases Card Styling
+    description: An attempt to style the bases card view with center alignment and other things. Kinda fugly and removes scrolling on embeded bases, so make your choice on whether or not you want this garbage I tried to make.
+    type: class-toggle
+    allowEmpty: false
+    default: false
+-
+*/
+
+.theme-light.neet-lite {
+  --color-1: #c6c6c6;
+  --color-2: #c6c6c6;
+  --color-3: #c6c6c6;
+  --color-4: #c6c6c6;
+  --color-5: #c6c6c6;
+  --color-6: #c6c6c6;
+  --color-7: #c6c6c6;
+  --extra-1: #62d6ff;
+  --extra-2: #31bdf7;
+  --extra-3: #62d6ff;
+
+  --theme-bold: #31bdf7;
+  --theme-italics: #62d6ff;
+  --theme-lowpacity: #62d5ff20;
+
+  --interactive-accent: #62d6ff;
+  --nav-item-background-active: #62d5ff52;
+}
+
+.theme-light.neet-aero {
+  --color-1: #7acf79;
+  --color-2: #6aceff;
+  --color-3: #7893ac;
+  --color-4: #6b9026;
+  --color-5: #7da4e9;
+  --color-6: #effd94;
+  --color-7: #ffab2a;
+  --extra-1: #7acf79;
+  --extra-2: #6b9026;
+  --extra-3: #6aceff;
+
+  --theme-bold: #6aceff;
+  --theme-italics: #6b9026;
+  --theme-lowpacity: #7bcf7920;
+
+  --nav-item-background-active: #7da5e97a;
+  --interactive-accent: #7da4e9;
+}
+
+.theme-light.neet-strawmatcha {
+  --color-1: #d4687e;
+  --color-2: #d6d9ae;
+  --color-3: #ffc0ce;
+  --color-4: #ebe2ce;
+  --color-5: #9ba86e;
+  --color-6: #ffe6f0;
+  --color-7: #d6d9ae;
+  --extra-1: #ffc0ce;
+  --extra-2: #d4687e;
+  --extra-3: #9ba86e;
+
+  --theme-bold: #d4687e;
+  --theme-italics: #9ba86e;
+  --theme-lowpacity: #ffc0ce20;
+
+  --nav-item-background-active: #9ba86e62;
+  --interactive-accent: #9ba86e;
+}
+
+.theme-light.neet-mint {
+  --color-1: #8dc2b8;
+  --color-2: #a9dbd5;
+  --color-3: #ede9b9;
+  --color-4: #889e8d;
+  --color-5: #d5e4df;
+  --color-6: #b8e4cd;
+  --color-7: #755651;
+  --extra-1: #8dc2b8;
+  --extra-2: #6fa097;
+  --extra-3: #755651;
+
+  --theme-bold: #8dc2b8;
+  --theme-italics: #755651;
+  --theme-lowpacity: #8dc2b820;
+
+  --nav-item-background-active: #6fa0975e;
+  --interactive-accent: #8dc2b8;
+}
+
+.theme-light.neet-magic {
+  --color-1: #fadd93;
+  --color-2: #fdacb7;
+  --color-3: #ecacac;
+  --color-4: #9e95ca;
+  --color-5: #a07bc0;
+  --color-6: #587aaa;
+  --color-7: #495f9c;
+  --extra-1: #fadd93;
+  --extra-2: #ecacac;
+  --extra-3: #a07bc0;
+
+  --theme-bold: #d3a93e;
+  --theme-italics: #a07bc0;
+  --theme-lowpacity: #fadd9320;
+
+  --nav-item-background-active: #a07bc056;
+  --interactive-accent: #a07bc0;
+}
+
+.theme-light.neet-cmyk {
+  --color-1: #59d0ff;
+  --color-2: #f479b0;
+  --color-3: #efe20a;
+  --color-4: #59d0ff;
+  --color-5: #f479b0;
+  --color-6: #efe20a;
+  --color-7: #59d0ff;
+  --extra-1: #59d0ff;
+  --extra-2: #258ab3;
+  --extra-3: #f479b0;
+
+  --theme-bold: #3da9d4;
+  --theme-italics: #cf598e;
+  --theme-lowpacity: #3da9d420;
+
+  --nav-item-background-active: #f479b077;
+  --interactive-accent: #f479b0;
+}
+
+.theme-light.neet-accent {
+  --color-1: var(--color-accent);
+  --color-2: var(--color-accent);
+  --color-3: var(--color-accent);
+  --color-4: var(--color-accent);
+  --color-5: var(--color-accent);
+  --color-6: var(--color-accent);
+  --color-7: var(--color-accent);
+  --extra-1: var(--color-accent);
+  --extra-2: var(--color-accent);
+  --extra-3: var(--color-accent);
+
+  --theme-bold: var(--color-accent);
+  --theme-italics: var(--color-accent);
+  --theme-lowpacity: #ffffff36;
+
+  --nav-item-background-active: var(--color-accent);
+  --interactive-accent: var(--color-accent);
+}
+
+.theme-light {
+  color-scheme: light;
+
+  --text-faint: #2e2f33;
+  --background-editor-primary: #ffffff;
+
+  --graph-line: #d6d6d6;
+
+  --h1-color: var(--header-color);
+  --h2-color: var(--header-color);
+  --h3-color: var(--header-color);
+  --h4-color: var(--header-color);
+  --h5-color: var(--header-color);
+  --h6-color: var(--header-color);
+  --metadata-label-text-color: black;
+
+  --callout-border-width: 0px;
+  --callout-border-opacity: 0.25;
+  --callout-title-size: 1rem;
+  --callout-padding: 0px;
+  --callout-radius: 0px;
+}
+
+body {
+  /* font styling */
+  --font-header: Pixel Operator HB;
+  --font-details: Nintendo DS Bios;
+  --font-default: MS PGothic;
+  --font-monospace: MS UI Gothic;
+  
+  --file-header-font-size: 1.1rem;
+  --status-bar-font-size: 1.1rem;
+  
+  --header-size: 1.4rem;
+  --h1-size: 2.5rem;
+  --h2-size: 2.3rem;
+  --h3-size: 2.1rem;
+  --h4-size: 1.9rem;
+  --h5-size: 1.7rem;
+  --h6-size: 1.5rem;
+
+  /* corners */
+  --tab-curve: 0px;
+  --clickable-icon-radius: 0px;
+}
+
+/* extra header (back buttons, view mode, more options) */
+.workspace-tab-container .view-header {
+  height: 40px;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset;
+}
+
+/* main header (where folder path is) */
+.workspace-tab-container .view-header-title-container {
+  height: 39px;
+  border: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset;
+  font-family: var(--font-details);
+}
+.titlebar-button-container {
+  background-color: transparent !important;
+}
+
+/* sidebar headers */
+.nav-action-button:active {}
+
+.nav-header {
+  height: var(--header-height);
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset;
+  font-family: Nintendo DS BIOS;
+}
+
+.mod-left-split .nav-header {
+  border-left: var(--divider-width) solid var(--border-highlight);
+}
+
+/* scrollbar. cries */
+::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--scrollbar-track);
+  border: 1px solid black;
+}
+.theme-light ::-webkit-scrollbar-thumb,
+.theme-light ::-webkit-scrollbar-button {
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+/* buttons, icons, toggles */
+button,
+button.mod-cta,
+button:not(.clickable-icon) {
+  border: 1px solid black;
+  border-radius: 0px;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+  font-family: Nintendo DS BIOS;
+  font-size: 1.1rem;
+  color: black;
+}
+
+select.dropdown {
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.clickable-icon {
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+.clickable-icon:active {
+  filter: blur(50%);
+}
+
+.clickable-icon::before {
+  content: ' ';
+}
+
+.checkbox-container {
+  background-color: #c6c6c6;
+}
+
+.checkbox-container.is-enabled {
+  background-color: var(--extra-1);
+}
+
+/* core buttons (file explorer, graph, tags, etc) */
+.mod-right-split .workspace-tab-header-container-inner,
+.mod-left-split .workspace-tab-header-container-inner {
+  gap: 0;
+  margin-left:1rem;
+}
+.mod-right-split .workspace-tab-header,
+.mod-left-split .workspace-tab-header {
+  border-radius: 0;
+}
+
+.mod-right-split .workspace-tab-header,
+.mod-left-split .workspace-tab-header {
+  border: 1px none black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+.mod-right-split .workspace-tab-header.is-active,
+.mod-left-split .workspace-tab-header.is-active {
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner,
+.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner {
+  border: 0px;
+}
+
+/* tabs and header bar */
+.mod-root .workspace-tab-header:not(.is-active) {
+  top: 3px;
+  border: 1px none black;
+  border-bottom: none;
+  border-radius: 0px;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+.mod-root .workspace-tab-header.is-active {
+  top: 3px;
+  border: 1px solid black;
+  border-bottom: none;
+  border-radius: 0px;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+.mod-root .workspace-tab-header :not(.is-active) * {
+  border: none;
+}
+
+.mod-root .workspace-tab-header-inner::after {
+  background: none !important;
+}
+
+.workspace-tab-header {
+  align-items: center;
+  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+}
+
+.workspace-tab-header-inner {
+  margin: 1px 0;
+  border-radius: var(--tab-radius) var(--tab-radius) 0 0;
+}
+
+.workspace-tab-header-container {
+  display: flex;
+  height: var(--header-height);
+  flex: 0 0 auto;
+  padding-left: 0;
+  padding-right: var(--size-4-2);
+  position: relative;
+  border: none;
+  background-image: linear-gradient(to bottom, var(--extra-1), var(--extra-2));
+  box-shadow: 0 -2px var(--extra-1) inset, 0 2px var(--extra-1) inset, -2px 0 var(--extra-1) inset, 2px 0 var(--extra-1) inset;
+}
+
+.mod-sidedock .workspace-tab-header-container {
+  display: flex;
+  height: var(--header-height);
+  flex: 0 0 auto;
+  padding-left: 0;
+  padding-right: var(--size-4-2);
+  position: relative;
+  border: 1px solid black;
+  border-bottom: none;
+  background-image: linear-gradient(to bottom, var(--extra-1), var(--extra-2));
+  box-shadow: 0 -2px var(--extra-1) inset, 0 2px var(--extra-1) inset, -2px 0 var(--extra-1) inset, 2px 0 var(--extra-1) inset;
+}
+
+/* side ribbon */
+.workspace-ribbon {
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.workspace-ribbon.mod-left:before {
+  border-bottom: 1px solid var(--accent-1);
+  opacity: 0;
+}
+
+.side-dock-settings,
+.side-dock-actions {
+  gap: 2px;
+}
+
+.sidebar-toggle-button {
+  background: transparent;
+}
+
+.workspace-tab-header.is-active {
+  border: none;
+  box-shadow: 1px 1px 0 var(--tab-outline-width) var(--tab-outline-color);
+  color: var(--tab-text-color-active);
+  background-color: var(--tab-background-active);
+  z-index: 2;
+}
+
+.workspace-leaf-resize-handle {
+  opacity: 0 !important;
+}
+
+.workspace-tabs .workspace-leaf .view-content {
+  background-color: var(--background-editor-primary);
+  border: 4px solid var(--border-highlight);
+}
+
+/* file explorer */
+.nav-files-container {
+  background-color: pink;
+  background-image:  linear-gradient(#dbdbdb 1px, transparent 1px), linear-gradient(to right, #dbdbdb 1px, #ffffff 1px);
+  background-size: 50px 50px;
+  border-right: 1px solid black;
+}
+
+.nav-file-title:hover {
+  background: linear-gradient(to right, var(--extra-1), transparent);
+  color: black;
+  border-radius: 0px;
+}
+
+/* folder colors */
+.nav-files-container > div > .nav-folder {
+  background-color: var(--folder-color);
+  --nav-item-color: black;
+  --nav-item-color-hover: black;
+  --nav-collapse-icon-color: black;
+  border-radius: 0px;
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff79, #c6c6c600);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+  margin-bottom: 2px;
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 1) {
+  --folder-color: var(--color-1);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 2) {
+  --folder-color: var(--color-2);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 3) {
+  --folder-color: var(--color-3);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 4) {
+  --folder-color: var(--color-4);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 5) {
+  --folder-color: var(--color-5);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 6) {
+  --folder-color: var(--color-6);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(7n + 7) {
+  --folder-color: var(--color-7);
+}
+
+.nav-file-title:hover {
+  background: linear-gradient(to right, var(--extra-1), transparent);
+  color: black;
+  border-radius: 0px;
+}
+
+.tree-item-self.is-being-renamed:focus-within {
+  color: var(--tab-text-color-active);
+}
+
+.nav-buttons-container {
+  border-radius: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.inline-title {
+  font-size: 2rem;
+  font-family: var(--font-header) !important;
+  color: var(--extra-3);
+}
+
+.workspace-leaf-content[data-type='outline'] .view-content, .tag-container {
+  background-color: pink;
+  background-image:  linear-gradient(#dbdbdb 1px, transparent 1px), linear-gradient(to right, #dbdbdb 1px, #ffffff 1px);
+  background-size: 50px 50px;
+}
+
+.tag-container .tree-item-self.mod-collapsible {
+  background: linear-gradient(to right, var(--extra-3), transparent);
+  border-radius: 0px;
+  color: black;
+}
+
+/* vault switcher */
+.workspace-sidedock-vault-profile {
+  border-radius: 0;
+  border: 1px solid black;
+  border-bottom: none;
+  border-left: none;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+
+/* status bar */
+.status-bar {
+  position: inherit;
+  font-family: Nintendo DS BIOS;
+  font-size: 1.2em;
+  border-radius: 0;
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+
+.modal-close-button {
+  margin-right: 0.25rem;
+}
+
+/* metadata box */
+.metadata-property-key {
+  background: linear-gradient(to right, var(--extra-1), transparent);
+  color: black;
+  border-radius: 0px;
+}
+.text-icon-button, .metadata-properties-heading {
+  display: none;
+}
+
+/* search pane */
+.search-result-container {
+  background-color: pink;
+  background-image:  linear-gradient(#dbdbdb 1px, transparent 1px), linear-gradient(to right, #dbdbdb 1px, #ffffff 1px);
+  background-size: 50px 50px;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+.search-result:not(.is-collapsed) .search-result-file-title {
+  background: linear-gradient(to right, var(--extra-3), transparent);
+  color: black;
+  border-radius: 0px;
+}
+
+/* graph */
+.graph-controls, .workspace-split:not(.mod-root) .graph-controls.is-close {
+  border: none;
+  background: white;
+}
+
+/* get those round corners away from me */
+.multi-select-pill, input[type=checkbox], .modal.mod-sidebar-layout, .banner-image img, .checkbox-container, .checkbox-container:after, .modal, a.tag {
+  border-radius: var(--tab-curve) !important;
+}
+
+/* ---------- BASE STYLING ---------- */
+/* table */
+.bases-thead {
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+  font-family: Nintendo DS BIOS;
+  font-size: 1.2rem;
+}
+.bases-table-footer {
+  border-top: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, #c6c6c6);
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+}
+.bases-table-summary-cell .summary-content {
+  font-family: Nintendo DS BIOS;
+  font-size: 1rem;
+}
+.bases-tr:nth-child(even) {
+  background-color: #c5c5c52f;
+}
+
+/* ---------- KANBAN STYLING ---------- */
+/* kanban card colors */
+.kanban-plugin__lane {
+  border: 1px solid black;
+  border-radius: 0px;
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+1)>div {
+  background-color: var(--color-1);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+2)>div {
+  background-color: var(--color-2);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+3)>div {
+  background-color: var(--color-3);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+4)>div {
+  background-color: var(--color-4);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+5)>div {
+  background-color: var(--color-5);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+6)>div {
+  background-color: var(--color-6);
+}
+.kanban-plugin__lane-wrapper:nth-child(7n+7)>div {
+  background-color: var(--color-7);
+}
+/* kanban cards */
+.kanban-plugin__item-title-wrapper {
+  background-color: white;
+  border-radius: 0px;
+}
+.kanban-plugin__item-title-wrapper:has(h1), .kanban-plugin__item-title-wrapper:has(button), .kanban-plugin__item-title-wrapper:has(img) {
+  background-color: white;
+  text-align: center;
+  border-radius: 0px;
+}
+.kanban-plugin__item-title-wrapper:has(h1) > .kanban-plugin__item-prefix-button-wrapper, .kanban-plugin__item-postfix-button-wrapper {
+  display: none;
+}
+.kanban-plugin__lane-header-wrapper {
+  border-bottom: 1px solid black;
+}
+.kanban-plugin__item-button-wrapper {
+  border-top: 1px solid black;
+}
+/* kanban background */
+.kanban-plugin__board>div {
+  background-image:  linear-gradient(#dbdbdb 1px, transparent 1px), linear-gradient(to right, #dbdbdb 1px, #ffffff 1px);
+  background-size: 50px 50px;
+  border-right: 1px solid black;
+}
+
+/* ---------- CALENDAR STYLING ---------- */
+#calendar-container {
+  --color-background-heading: transparent;
+  --color-background-day: transparent;
+  --color-background-weeknum: transparent;
+  --color-background-weekend: var(--extra-3);
+
+  --color-dot: var(--text-muted);
+  --color-arrow: var(--text-muted);
+  --color-button: var(--text-muted);
+
+  --color-text-title: black;
+  --color-text-heading: var(--text-muted);
+  --color-text-day: black;
+  --color-text-today: var(--extra-1);
+  --color-text-weeknum: var(--text-muted);
+}
+
+/* ---------- TABLE STYLING ---------- */
+.markdown-rendered table {
+	border: 1px solid black;
+}
+.markdown-rendered th,
+.markdown-rendered td,
+.cm-html-embed thead tr > th, .markdown-rendered thead tr > th {
+	border: 1px solid black;
+}
+.markdown-rendered th {	
+	border: 1px solid black;
+}
+.markdown-rendered td {
+	border: 1px solid black;
+	line-height:1.5;
+}
+.cm-html-embed tbody tr:nth-child(even), .markdown-rendered tbody tr:nth-child(even) {
+  background-color: var(--theme-lowpacity);
+}
+
+/* ---------- CALLOUT STYLING ---------- */
+.callout, .callout.is-collapsable {
+    background-color: transparent;
+    page-break-inside: avoid;
+}
+.callout-title {
+    border: 1px solid black;
+    background-image: linear-gradient(to bottom, #ffffff, rgb(var(--callout-color), 0.3));
+    box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+    padding: 4px;
+}
+.callout-content {
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid black;
+  border-top: none;
+}
+
+/* ---------- NOTE FORMATTING ---------- */
+/* bold text */
+.markdown-preview-view strong,
+.markdown-source-view.mod-cm6 strong,
+.cm-strong {
+    color: var(--theme-bold);
+    font-weight: bold;
+}
+
+/* italic text */
+.markdown-preview-view em,
+.markdown-source-view.mod-cm6 em,
+.cm-em {
+    color: var(--theme-italics);
+    font-style: italic;
+}
+
+/* highlighted text */
+.markdown-preview-view mark,
+.markdown-source-view.mod-cm6 mark,
+.cm-highlight {
+    background-color: var(--extra-1);
+    color: #000000;
+}
+
+/* internal links */
+.markdown-preview-view a.internal-link,
+.markdown-source-view.mod-cm6 a.internal-link,
+.cm-hmd-internal-link {
+    color: var(--theme-bold);
+    text-decoration: underline;
+      --link-color-hover: var(--theme-italics);
+}
+
+/* external links */
+.markdown-preview-view a.external-link,
+.markdown-source-view.mod-cm6 a.external-link,
+.cm-link:not(.cm-hmd-internal-link) {
+    color: var(--theme-italics);
+    text-decoration: underline;
+      --link-color-hover: var(--theme-bold);
+}
+
+/* fixing primary codeblock */
+span.token.tag {
+    padding: 0.5px;
+    background: var(--theme-lowpacity);
+    font-size: 1em;
+    border-radius: 0px;
+}
+
+/* bullet points */
+.list-bullet.list-bullet.list-bullet:after {
+  content: "✦";
+  height: unset;
+  width: unset;
+  background: transparent;
+  margin-top: 5px;
+  color: var(--extra-1);
+}
+
+/* ordered list, from https://forum.obsidian.md/t/how-to-customize-ordered-list-using-css/8242/2 */
+	ol
+{ list-style-type: decimal; }
+	ol ol
+{ list-style-type: lower-latin; }
+	ol ol ol
+{ list-style-type: lower-roman; } 
+/* Restarts count when nested in between one unordered list. */
+	ul ol ul ol
+{ list-style-type: decimal; }
+	ul ol ul ol ol
+{ list-style-type: lower-latin; }
+	ul ol ul ol ol ol
+{ list-style-type: lower-roman; }
+
+/* checkbox formatting */
+input[type=checkbox]:checked:hover, input[type=checkbox]:checked {
+  background-color: var(--extra-3);
+  border-color: black;
+}
+input[type=checkbox]:checked:after {
+  background-color: #000000;
+}
+
+/* blockqoute, from https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Blockquote%20styling%2001.md */
+.markdown-preview-view blockquote {
+  padding: 8px 12px 8px 32px;
+  border: none;
+  position: relative;
+}
+.markdown-preview-view blockquote:before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  width: 3px;
+  height: calc(100% - 30px);
+  background: var(--extra-1);
+  border-radius: var(--button-radius);
+}
+cite {
+  color: var(--extra-3);
+  text-align: end;
+  display: block;
+  padding-right: 1em;
+}
+
+/* headers */
+.markdown-preview-view h1,
+.markdown-source-view.mod-cm6 h1,
+.cm-header-1 {
+    font-family: var(--font-header);
+    color: var(--extra-1);
+}
+.markdown-preview-view h2,
+.markdown-source-view.mod-cm6 h2,
+.cm-header-2 {
+    font-family: var(--font-header);
+    color: var(--extra-3); 
+    
+}
+.markdown-preview-view h3,
+.markdown-source-view.mod-cm6 h3,
+.cm-header-3 {
+    font-family: var(--font-header);
+    color: var(--extra-1); 
+    
+}
+.markdown-preview-view h4,
+.markdown-source-view.mod-cm6 h4,
+.cm-header-4 {
+    font-family: var(--font-header);
+    color: var(--extra-3); 
+    
+}
+.markdown-preview-view h5,
+.markdown-source-view.mod-cm6 h5,
+.cm-header-5 {
+    font-family: var(--font-header);
+    color: var(--extra-1); 
+    
+}
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 h6,
+.cm-header-6 {
+    font-family: var(--font-header);
+    color: var(--extra-3); 
+    
+}
+
+/* ---------- CSSCLASSES ---------- */
+/* small banner */
+.bannermin {
+  --banner-height: 150px; 
+}
+
+/* hide note header */
+.mod-header { display: none; }
+
+/* show header */
+.show-header .mod-header {
+  display: block !important;
+}
+
+/* hide base toolbar besides view */
+.basesmin .bases-header { display: none; }
+
+/* kanbanwrap */
+.neet-kanwrap kanban-plugin__placeholder {
+    flex-shrink: 1;
+  } 
+      
+.neet-kanwrap div.kanban-plugin__board > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 25px;
+  }
+  
+.neet-kanwrap div.kanban-plugin__board .kanban-plugin__lane-wrapper {
+  }
+  
+.neet-kanwrap div.kanban-plugin__board .kanban-plugin__lane-wrapper + .kanban-plugin__lane-wrapper {
+    margin-top: 0.25rem;
+    margin-right: 0;
+  }
+  
+.neet-kanwrap div.kanban-plugin__board > div {
+    padding: 0.125rem;
+    padding-left: 1rem;
+    overflow-x: auto;
+  }
+
+/* possibly ugly table styling */
+.neetable .markdown-rendered table {
+	border: 1px solid black;
+}
+.neetable .markdown-rendered th,
+.neetable .markdown-rendered td,
+.neetable .cm-html-embed thead tr > th, .markdown-rendered thead tr > th {
+	border: 1px solid black;
+}
+.neetable .markdown-rendered th {	
+	color: var(--theme-italics);
+  font-family: var(--font-header);
+	border: 1px solid black;
+  background-image: linear-gradient(to bottom, #ffffff, var(--theme-lowpacity));
+  box-shadow: 0 -2px #ffffff inset, 0 2px #ffffff inset, -2px 0 #ffffff inset, 2px 0 #ffffff inset;
+	padding: 0.5rem 0.5rem;
+}
+.neetable .markdown-rendered td {
+	border: 1px solid black;
+	line-height:1.5;
+	padding: 0.5rem 0.5rem;
+}
+.neetable .cm-html-embed tbody tr:nth-child(even), .markdown-rendered tbody tr:nth-child(even) {
+  background-color: var(--theme-lowpacity);
+}
+
+/* base card styling */
+.neet-cardstyle .bases-embed .bases-view[data-view-type="cards"] {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  overflow: hidden;
+}
+.neet-cardstyle .bases-cards-item {
+  text-align: center;
+  justify-content: center !important;
+  border-radius: 0px;
+}
+.neet-cardstyle .bases-cards-line {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+}
+.neet-cardstyle .bases-cards-label {
+  font-family: var(--font-header);
+  font-size: 0.9rem;
+  color: var(--extra-3);
+}
+.neet-cardstyle .bases-cards-property.mod-title {
+  font-family: var(--font-header);
+  font-size: 1rem;
+}
